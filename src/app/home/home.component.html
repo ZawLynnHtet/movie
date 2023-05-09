@@ -1,0 +1,12 @@
+<div class="bg-style">
+
+    <app-navbar></app-navbar>
+    <div class="home-page">
+        <h1>You got Unlimited multi-movies and more here __</h1>
+        <p>Enjoy your movies.</p>
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <input type="text" placeholder="Enter your email" required [(ngModel)]="email">
+        <button routerLink="/movie" (click)="signUp()">Sing Up</button>
+    </div>
+    <app-footer></app-footer>
+</div>

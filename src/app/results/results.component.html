@@ -1,0 +1,19 @@
+<app-navbar class="navbar"></app-navbar>
+<div class="wrapper">
+    <div class="details">
+        <ng-container *ngFor="let movie of resultData; let i = index">
+            <ng-container *ngFor="let resultMovie of movie.movies">
+                <!-- <ng-container *ngIf="resultMovie.title == result"> -->
+                    <img src="http://image.tmdb.org/t/p/w500/{{resultMovie.poster_path}}" alt="">
+                    <div class="text-details">
+                        <h1>{{resultMovie.title}}</h1>
+                        <p>{{resultMovie.overview}}</p>
+                        <button><a href="">WATCH</a></button>
+                    </div>
+                <!-- </ng-container> -->
+            </ng-container>
+        </ng-container>
+    </div>
+</div>
+
+

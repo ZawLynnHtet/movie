@@ -1,0 +1,98 @@
+.navbar {
+    background: #000;
+}
+
+.details {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background: #000;
+    padding: 60px 60px 82px;
+    color: #fff;
+}
+
+.details img {
+    width: 350px;
+    height: 500px;
+}
+
+
+.details button {
+    padding: 13px 50px;
+    cursor: pointer;
+    background: red;
+    border: none;
+    border-radius: 5px;
+}
+
+.details button a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.details h1, p {
+    margin-bottom: 30px;
+}
+
+
+@media screen and (max-width: 1130px) {
+    .details img {
+        width: 330px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .details {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .details {
+        padding: 60px 35px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .details {
+        padding: 60px 20px;
+    }
+    .details button {
+        padding: 10px 35px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .details h1 {
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .details p {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .details button {
+        padding: 8px 28px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .details {
+        padding: 60px 18px 30px;
+    }
+    .details img {
+        width: 280px;
+        height: 380px;
+    }
+    .details button a {
+        padding: 5px 20px;
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
