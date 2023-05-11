@@ -16,6 +16,7 @@
     font-weight: 900;
     font-family: sans-serif;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .navbar {
@@ -42,6 +43,10 @@
     border-radius: 30px;
     box-shadow: inset 0 0 5px rgba(255, 255, 255, .9);
     transition: 2s;
+}
+
+::placeholder {
+    color: rgb(212, 213, 215);
 }
 
 .input-box i {

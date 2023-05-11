@@ -25,19 +25,15 @@ export class LoginComponent implements OnInit{
     }
     else if(this.email === '' && this.password === '') {
       this.roter.navigateByUrl('login');
-      alert("Enter your email and password");
     }
     else if(this.email !== '' && this.password === '') {
       this.roter.navigateByUrl('login');
-      alert("Enter your password");
     }
     else if(this.email !== 'zaw1234@gmail.com' && this.password !== '123456') {
       this.roter.navigateByUrl('/login');
-      alert("Your email and password are incorrect. Try again!");
     }
     else if(this.password !== '123456') {
       this.roter.navigateByUrl('/login');
-      alert("Your password is incorrect. Try again!");
     }
     this.email = '';
     this.password = '';

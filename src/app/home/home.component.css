@@ -41,14 +41,24 @@
 .home-page input {
     width: 400px;
     height: 55px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     /* outline: #ccc 2px solid; */
-    margin-right: 10px;
+    margin-right: 20px;
     border-radius: 5px;
     padding: 0 10px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
     margin-bottom: 20px;
+    display: inline;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+    box-shadow: 0 0 5px #fff;
+}
+
+::placeholder {
+    color: rgb(111, 113, 115);
 }
 
 .home-page button {
@@ -62,6 +72,9 @@
     cursor: pointer;
 }
 
+.home-page button:hover {
+    opacity: .8;
+}
 
 @media screen and (max-width: 812px) {
     .home-page {

@@ -3,23 +3,45 @@
     <div class="login-container">
         <div class="login-box">
             <h2>Sign In</h2>
-            <div class="input-box">
-                <input type="text" required placeholder="Email or phone number" [(ngModel)]="email">
-            </div>
+            <!-- <div class="input-box"> -->
+                <input type="text" placeholder="Email or phone number" [(ngModel)]="email" required #useremail="ngModel" email class="form-control">
+                <div *ngIf="useremail.invalid && useremail.touched" class="text-warning text-input">
+                    <div *ngIf="useremail.errors?.['required']">
+                        Please enter a valid email or phone number.            
+                    </div>
+
+                    <div *ngIf="useremail.errors?.['email']">
+                        Please enter a valid email.            
+                    </div>
+                </div>
+            <!-- </div> -->
             
-            <div class="input-box eye">
-                <input [type]="type?'password':'text'" required placeholder="password" [(ngModel)]="password" class="password">
-                <span><i (click)="show()" [ngClass]="visible?'bi-eye-fill':'bi-eye-slash-fill' "></i></span>
-            </div>
+            <!-- <div class="input-box eye"> -->
+                <div class="show-pw">
+                    <input [type]="type?'password':'text'" placeholder="password" [(ngModel)]="password" class="password form-control" required minlength="4" #userpassword="ngModel">
+                    <span><i (click)="show()" [ngClass]="visible?'bi-eye-fill':'bi-eye-slash-fill' "></i></span>
+                </div>
+
+
+                <div *ngIf="userpassword.invalid && userpassword.touched" class="text-warning text-input">
+                    <div *ngIf="userpassword.errors?.['required']">
+                        Please enter your password.
+                    </div>
+
+                    <div *ngIf="userpassword.errors?.['minlength']">
+                        Your password must contain between 4 and 60 characters.
+                    </div>
+                </div>
+            <!-- </div> -->
             
             <button routerLink="/movie" (click)="signIn()">Sign In</button>
             <br>
             <div class="check">
-                <label><input type="checkbox" class="checkbox"> Remember me</label>
+                <label><input type="checkbox" class="checkbox form-check-input"> Remember me</label>
                 <a href="">Need help?</a> 
             </div>
-            <p>Don't have an account?<a routerLink="/home">Sign up now</a></p>
-            <p>We protect your privacy. You can rest assured.</p>
+            <p>Don't have an account? <a routerLink="/home">Sign up now.</a></p>
+            <p>We protect your privacy. You can rest assured. <a href="" class="learn"><i>Learn more.</i></a></p>
         </div>
     </div>
     <app-footer></app-footer>
