@@ -50,6 +50,7 @@
     color: #fff;
     margin-bottom: 20px;
     display: inline;
+    margin-top: 50px;
 }
 
 input.ng-invalid.ng-touched {
