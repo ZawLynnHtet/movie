@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit{
     private router:Router) {}
 
   ngOnInit(): void {
-    this.resultData = this.myData.result_movies;
+    // this.resultData = this.myData.result_movies;
   }
 
   search() {

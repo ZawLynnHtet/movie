@@ -35,12 +35,12 @@ const routes: Routes = [
     path: 'details',
     component: MovieDetailsComponent
   },
+  // {
+  //   path: 'movie/:id',
+  //   component: MovieDetailsComponent
+  // },
   {
-    path: 'movie/:id',
-    component: MovieDetailsComponent
-  },
-  {
-    path: ':movieIndex/:id',
+    path: 'movie/:movieIndex/:id',
     component: MovieDetailsComponent
   },
   {

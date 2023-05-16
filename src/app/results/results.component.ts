@@ -12,6 +12,6 @@ export class ResultsComponent implements OnInit{
   constructor(private myData: DataService) {}
 
   ngOnInit(): void {
-    this.resultData = this.myData.result_movies;
+    // this.resultData = this.myData.result_movies;
   }
 }

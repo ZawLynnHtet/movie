@@ -14,6 +14,9 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ResultsComponent } from './results/results.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 
 @NgModule({
   declarations: [
@@ -25,14 +28,16 @@ import { NotfoundComponent } from './notfound/notfound.component';
     MovieComponent,
     MovieDetailsComponent,
     ResultsComponent,
-    NotfoundComponent
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,105 +9,89 @@
 
     <div class="contain">
 
-      <div class="row" *ngFor="let movie of result_movies; let i = index">
-        <h4>{{movie.title}}</h4>
-        <div class="wrapper d-flex">
-          <div class="card-box" *ngFor="let result of movie.movies" (click)="watchMovies(result.id, i)">
-            <img src="http://image.tmdb.org/t/p/w500/{{result.backdrop_path}}" alt="">
-            <div class="text">
-              <h5>{{result.original_title}}</h5>
-              <div class="rate">
-                <p>Popularity</p>
-                <p>{{result.popularity}}</p>
+        <div class="row" *ngFor="let movie of result_movies; let i = index">
+          <div *ngIf="loader; else load">
+          <h4>{{movie.title}}</h4>
+          <div class="wrapper d-flex">
+            <div class="card-box" *ngFor="let result of movie.movies" (click)="watchMovies(result.id, i)">
+              <img src="http://image.tmdb.org/t/p/w500/{{result.backdrop_path}}" alt="">
+              <div class="text">
+                <h5>{{result.original_title}}</h5>
+                <div class="rate">
+                  <p>Popularity</p>
+                  <p>{{result.popularity}}</p>
+                </div>
+                <div class="vote">
+                  <p>Vote Count : {{result.vote_count}}</p>
+                  <p><span>Rating</span> : {{result.vote_average}}</p>
+                </div>
+                <div class="date">
+                  <p>Release Date</p>
+                  <p>{{result.release_date}}</p>
+                </div>
+                <p>Language : <i>{{result.original_language}}</i></p>
               </div>
-              <div class="vote">
-                <p>Vote Count : {{result.vote_count}}</p>
-                <p><span>Rating</span> : {{result.vote_average}}</p>
-              </div>
-              <div class="date">
-                <p>Release Date</p>
-                <p>{{result.release_date}}</p>
-              </div>
-              <p>Language : <i>{{result.original_language}}</i></p>
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- <div class="row">
-        <h4>Tranding Movies</h4>
-        <div class="wrapper d-flex">
-          <div class="card-box" *ngFor="let movie of tranding">
-            <img src="http://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}" alt="">
-            <div class="text">
-              <h5>{{movie.original_title}}</h5>
-              <div class="rate">
-                <p>Popularity</p>
-                <p>{{movie.popularity}}</p>
-              </div>
-              <div class="vote">
-                <p>Vote Count : {{movie.vote_count}}</p>
-                <p><span>Rating</span> : {{movie.vote_average}}</p>
-              </div>
-              <div class="date">
-                <p>Release Date</p>
-                <p>{{movie.release_date}}</p>
-              </div>
-              <p>Language : <i>{{movie.original_language}}</i></p>
-            </div>
           </div>
-        </div>
-      </div>
-  
-      <div class="row">
-        <h4>Now Playing Movies</h4>
-        <div class="wrapper d-flex">
-          <div class="card-box" *ngFor="let movie of nowplaying">
-            <img src="http://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}" alt="">
-            <div class="text">
-              <h5>{{movie.original_title}}</h5>
-              <div class="rate">
-                <p>Popularity</p>
-                <p>{{movie.popularity}}</p>
-              </div>
-              <div class="vote">
-                <p>Vote Count : {{movie.vote_count}}</p>
-                <p><span>Rating</span> : {{movie.vote_average}}</p>
-              </div>
-              <div class="date">
-                <p>Release Date</p>
-                <p>{{movie.release_date}}</p>
-              </div>
-              <p>Language : <i>{{movie.original_language}}</i></p>
+
+          <ng-template #load>
+            <div class="item">
+              <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
             </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="row">
-        <h4>Upcoming Movies</h4>
-        <div class="wrapper d-flex">
-          <div class="card-box" *ngFor="let movie of upcoming">
-            <img src="http://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}" alt="">
-            <div class="text">
-              <h5>{{movie.original_title}}</h5>
-              <div class="rate">
-                <p>Popularity</p>
-                <p>{{movie.popularity}}</p>
+            <div class="wrapper d-flex">
+              <div class="col-sm-6 col-md-3 ml-1">
+                <div class="movie--isloading">
+                  <div class="loading-image"></div>
+                  <div class="loading-content">
+                    <div class="loading-text-container">
+                      <div class="loading-main-text"></div>
+                      <div class="loading-sub-text"></div>
+                    </div>
+                    <div class="loading-btn"></div>
+                  </div>
+                </div>
               </div>
-              <div class="vote">
-                <p>Vote Count : {{movie.vote_count}}</p>
-                <p><span>Rating</span> : {{movie.vote_average}}</p>
+              <div class="col-sm-6 col-md-3 ml-1">
+                <div class="movie--isloading">
+                  <div class="loading-image"></div>
+                  <div class="loading-content">
+                    <div class="loading-text-container">
+                      <div class="loading-main-text"></div>
+                      <div class="loading-sub-text"></div>
+                    </div>
+                    <div class="loading-btn"></div>
+                  </div>
+                </div>
               </div>
-              <div class="date">
-                <p>Release Date</p>
-                <p>{{movie.release_date}}</p>
+              <div class="col-sm-6 col-md-3 ml-1">
+                <div class="movie--isloading">
+                  <div class="loading-image"></div>
+                  <div class="loading-content">
+                    <div class="loading-text-container">
+                      <div class="loading-main-text"></div>
+                      <div class="loading-sub-text"></div>
+                    </div>
+                    <div class="loading-btn"></div>
+                  </div>
+                </div>
               </div>
-              <p>Language : <i>{{movie.original_language}}</i></p>
+              <div class="col-sm-6 col-md-3 ml-1">
+                <div class="movie--isloading">
+                  <div class="loading-image"></div>
+                  <div class="loading-content">
+                    <div class="loading-text-container">
+                      <div class="loading-main-text"></div>
+                      <div class="loading-sub-text"></div>
+                    </div>
+                    <div class="loading-btn"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </ng-template>
+    
         </div>
-      </div> -->
 
     </div>
     
