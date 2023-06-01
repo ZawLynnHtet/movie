@@ -124,6 +124,10 @@ width: 400px;
     font-weight: 600;
 }
 
+.loater-box {
+    margin-top: 60px;
+}
+
 @media screen and (max-width: 1300px) {
     .title-box h1 {
         font-size: 3rem;

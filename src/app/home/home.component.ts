@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { exhaustAll } from 'rxjs';
 import { __values } from 'tslib';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,20 +14,24 @@ export class HomeComponent implements OnInit{
 
   email: string = '';
   password: string = '';
+  visible:boolean=true;
+  type:boolean=true;
+    
+  
 
-  constructor(private router: Router){}
+  constructor(private router: Router,
+    private auth: AuthService){}
   ngOnInit(): void {
     
   }
   signUp() {
-    if (this.email === '') {
-      alert("Enter your email");
-      this.router.navigateByUrl('home');
-    }
-    else if (this.email.length < 10) {
-      alert("Email is incorrect. Please enter the email like this:'name1234@gmail.com'")
-      this.router.navigateByUrl('home');
-    }
+    this.router.navigateByUrl('page')
+    this.auth.setToken();
     this.email = '';
+  }
+
+  show() {
+    this.visible = !this.visible;
+    this.type = !this.type;
   }
 }

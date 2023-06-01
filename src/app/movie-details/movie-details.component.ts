@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../service/data.service';
+import { flatMap } from 'rxjs';
 
 @Component({
   selector: 'app-movie-details',
@@ -16,7 +17,7 @@ export class MovieDetailsComponent implements OnInit{
   topRated?:any;
   popular?:any;
   result_movies?:any;
-  loader:boolean=false;
+  loader:boolean=true;
 
 
   constructor(
@@ -29,7 +30,7 @@ export class MovieDetailsComponent implements OnInit{
   ngOnInit(): void {
 
     this.getMovies();
-    this.loader = true;
+    // this.loader = true;
 
     this.movieid = this.activatedRoute.snapshot.params['id'];
     console.log(this.movieid);
@@ -38,6 +39,7 @@ export class MovieDetailsComponent implements OnInit{
   }
 
   putMovies() {
+    this.loader = false;
     this.result_movies = [
       {
         "movies": this.nowPlaying,

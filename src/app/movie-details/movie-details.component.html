@@ -1,6 +1,23 @@
 <app-navbar class="navbar"></app-navbar>
 
 
+<div  *ngIf="!loader; else loadpage">
+    <div class="details">
+        <ng-container *ngFor="let movie of result_movies; let i = index">
+            <ng-container *ngFor="let result of movie.movies">
+                <ng-container *ngIf="i == movieindex && result.id == movieid">
+                    <img src="http://image.tmdb.org/t/p/w500/{{result.poster_path}}" alt="" class="img-fluid">
+                    <div class="text-details">
+                        <h1>{{result.title}}</h1>
+                        <p>{{result.overview}}</p>
+                        <button><a href="http://imdb.com/title/http://image.tmdb.org/t/p/w500/{{result.poster_path}}">WATCH</a></button>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>
+
 <ng-template #loadpage>
     <div class="loader-page">
         <div class="skeleton">
@@ -16,17 +33,5 @@
         </div>
     </div>
 </ng-template>
-<div class="details" *ngIf="loader; else loadpage">
-        <ng-container *ngFor="let movie of result_movies; let i = index">
-            <ng-container *ngFor="let result of movie.movies">
-                <ng-container *ngIf="i == movieindex && result.id == movieid">
-                    <img src="http://image.tmdb.org/t/p/w500/{{result.poster_path}}" alt="" class="img-fluid">
-                    <div class="text-details">
-                        <h1>{{result.title}}</h1>
-                        <p>{{result.overview}}</p>
-                        <button><a href="http://imdb.com/title/http://image.tmdb.org/t/p/w500/{{result.poster_path}}">WATCH</a></button>
-                    </div>
-                </ng-container>
-            </ng-container>
-        </ng-container>
-</div>
+
+

@@ -6,6 +6,8 @@ import { MovieComponent } from './movie/movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ResultsComponent } from './results/results.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AuthGuard } from './shared/auth.guard';
+import { PageComponent } from './page/page.component';
 
 const routes: Routes = [
   {
@@ -25,11 +27,16 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+  },
+  {
+    path: 'page',
+    component: PageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'movie',
-    component: MovieComponent
+    component: MovieComponent,
   },
   {
     path: 'details',

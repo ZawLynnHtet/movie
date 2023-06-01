@@ -50,7 +50,7 @@
     color: #fff;
     margin-bottom: 20px;
     display: inline;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 input.ng-invalid.ng-touched {
@@ -62,7 +62,61 @@ input.ng-invalid.ng-touched {
     color: rgb(111, 113, 115);
 }
 
-.home-page button {
+.modal-content {
+    background: rgba(0, 0, 0, 0.9);
+    /* background: rgb(8,8,97);
+background: linear-gradient(90deg, rgba(8,8,97,1) 0%, rgba(42,27,60,1) 100%, rgba(0,212,255,1) 100%, rgba(6,78,166,1) 100%); */
+}
+
+.modal-header {
+    font-family: sans-serif;
+}
+
+.modal-header h1 {
+    font-weight: 600;
+    color: red;
+}
+
+.modal-body {
+    position: relative;
+}
+
+.modal-body span {
+    position: absolute;
+    right: 10px;
+    bottom: 22px;
+    color: rgb(88, 112, 132);
+    cursor: pointer;
+}
+
+.modal-body input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.modal-body ::placeholder {
+    font-family: sans-serif;
+    color: rgb(88, 112, 132);
+}
+
+.modal-footer button {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.add {
+    width: 100%;
+    background: linear-gradient(200deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)) !important;
+}
+
+.home-page .container img{
+    background-size: contain;
+}
+
+.home-page .register {
     width: 180px;
     height: 55px;
     background: teal;
@@ -73,8 +127,46 @@ input.ng-invalid.ng-touched {
     cursor: pointer;
 }
 
-.home-page button:hover {
+.home-page .register:hover {
     opacity: .8;
+}
+
+.movie-link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: red;
+}
+
+section {
+    padding: 50px 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));
+}
+
+section button {
+    background: #2f416d;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-bottom: 1px solid #010710;
+    box-shadow: none !important;
+}
+
+section .accordion-body {
+    background: #132144;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 993px) {
+    section button {
+        font-size: 1.1rem;
+        font-weight: 500;
+    } 
+    section .accordion-body {
+        font-size: 1rem;
+        font-weight: 400;
+    }     
 }
 
 @media screen and (max-width: 812px) {
@@ -95,7 +187,7 @@ input.ng-invalid.ng-touched {
         width: 300px;
         height: 40px;
     }
-    .home-page button {
+    .home-page .register {
         width: 100px;
         height: 40px;
     }
@@ -123,5 +215,25 @@ input.ng-invalid.ng-touched {
         font-size: 16px;
         font-weight: 300;
     }
+    section {
+        padding: 30px 0 50px;
+    }
+    section button {
+        font-size: 1rem;
+        font-weight: 400;
+    } 
+    section .accordion-body {
+        font-size: .8rem;
+        font-weight: 300;
+    } 
+    .modal-header p {
+        font-weight: 400;
+        font-size: 18px;
+    } 
+    .movie-link {
+        font-size: .3rem;
+        font-weight: 500;
+        background: red;
+    } 
 }
 

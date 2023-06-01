@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { DataService } from '../service/data.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,13 +12,23 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit{
   result: string = '';
   resultData: any[] = [];
+  button:boolean=true;
 
   constructor(
     private myData: DataService,
-    private router:Router) {}
+    private router:Router,
+    private auth:AuthService) {}
 
   ngOnInit(): void {
-    // this.resultData = this.myData.result_movies;
+    if(this.auth.isAuthenticated() == true) {
+      this.button = false;
+      console.log("token")
+    }
+  }
+
+  signOut() {
+    this.auth.clearToke();
+    this.button = true;
   }
 
   search() {

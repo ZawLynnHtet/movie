@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,15 +14,18 @@ export class LoginComponent implements OnInit{
   visible:boolean = true;
   type:boolean = true;
 
-  constructor(private roter:Router) {
+  constructor(
+    private roter:Router,
+    private auth: AuthService) {
   }
 
   ngOnInit(): void {
     
   }
   signIn() {
+    this.auth.setToken();
     if(this.email === "zaw1234@gmail.com" && this.password === "123456") {
-      this.roter.navigateByUrl('movie');
+      this.roter.navigateByUrl('page');
     }
     else if(this.email === '' && this.password === '') {
       this.roter.navigateByUrl('login');

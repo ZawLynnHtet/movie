@@ -7,10 +7,9 @@
     <p>You can watch and download the movies.</p>
   </div>
 
-    <div class="contain">
+    <div class="contain" *ngIf="!loader; else load">
 
         <div class="row" *ngFor="let movie of result_movies; let i = index">
-          <div *ngIf="loader; else load">
           <h4>{{movie.title}}</h4>
           <div class="wrapper d-flex">
             <div class="card-box" *ngFor="let result of movie.movies" (click)="watchMovies(result.id, i)">
@@ -33,67 +32,231 @@
               </div>
             </div>
           </div>
-          </div>
-
-          <ng-template #load>
-            <div class="item">
-              <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
-            </div>
-            <div class="wrapper d-flex">
-              <div class="col-sm-6 col-md-3 ml-1">
-                <div class="movie--isloading">
-                  <div class="loading-image"></div>
-                  <div class="loading-content">
-                    <div class="loading-text-container">
-                      <div class="loading-main-text"></div>
-                      <div class="loading-sub-text"></div>
-                    </div>
-                    <div class="loading-btn"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 ml-1">
-                <div class="movie--isloading">
-                  <div class="loading-image"></div>
-                  <div class="loading-content">
-                    <div class="loading-text-container">
-                      <div class="loading-main-text"></div>
-                      <div class="loading-sub-text"></div>
-                    </div>
-                    <div class="loading-btn"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 ml-1">
-                <div class="movie--isloading">
-                  <div class="loading-image"></div>
-                  <div class="loading-content">
-                    <div class="loading-text-container">
-                      <div class="loading-main-text"></div>
-                      <div class="loading-sub-text"></div>
-                    </div>
-                    <div class="loading-btn"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 ml-1">
-                <div class="movie--isloading">
-                  <div class="loading-image"></div>
-                  <div class="loading-content">
-                    <div class="loading-text-container">
-                      <div class="loading-main-text"></div>
-                      <div class="loading-sub-text"></div>
-                    </div>
-                    <div class="loading-btn"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ng-template>
-    
         </div>
-
     </div>
+
+    <ng-template #load>
+      <div class="loater-box">
+        <div class="item">
+          <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+        </div>
+        <div class="wrapper d-flex">
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="loater-box">
+        <div class="item">
+          <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+        </div>
+        <div class="wrapper d-flex">
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="loater-box">
+        <div class="item">
+          <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+        </div>
+        <div class="wrapper d-flex">
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="loater-box">
+        <div class="item">
+          <ngx-skeleton-loader count="1" appearance="line"></ngx-skeleton-loader>
+        </div>
+        <div class="wrapper d-flex">
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3 ml-1">
+            <div class="movie--isloading">
+              <div class="loading-image"></div>
+              <div class="loading-content">
+                <div class="loading-text-container">
+                  <div class="loading-main-text"></div>
+                  <div class="loading-sub-text"></div>
+                </div>
+                <div class="loading-btn"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
     
     <app-footer></app-footer>
 </div>

@@ -1,0 +1,239 @@
+.bg-style {
+    width: 100%;
+    height: auto;
+    padding: 5px 0 0;
+    margin: 0;
+    background: linear-gradient(320deg, rgba(12, 4, 19, 0.9),rgba(4, 14, 33, 0.7)), url(../../assets/images/login-bg.jpg);
+    /* box-shadow: 0 0 2px rgba(2, 22, 50, 0.9), 0 0 50px rgba(5, 23, 64, 0.9); */
+    z-index: 10;
+}
+
+.home-page {
+    /* width: 100%; */
+    padding: 30px 150px;
+    color: #fff;
+    font-family: sans-serif;
+    margin-bottom: 70px;
+}
+
+@media screen and (max-width: 1000px) {
+    .home-page {
+        padding: 30px 100px;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .home-page {
+        padding: 30px 80px;
+    }
+}
+
+.home-page h1 {
+    font-size: 4em;
+    font-weight: 800;
+}
+
+.home-page p {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.home-page input {
+    width: 400px;
+    height: 55px;
+    /* border: 1px solid #ccc; */
+    /* outline: #ccc 2px solid; */
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    margin-bottom: 20px;
+    display: inline;
+    /* margin-top: 50px; */
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+    box-shadow: 0 0 5px #fff;
+}
+
+::placeholder {
+    color: rgb(111, 113, 115);
+}
+
+.modal-content {
+    background: rgba(0, 0, 0, 0.9);
+    /* background: rgb(8,8,97);
+background: linear-gradient(90deg, rgba(8,8,97,1) 0%, rgba(42,27,60,1) 100%, rgba(0,212,255,1) 100%, rgba(6,78,166,1) 100%); */
+}
+
+.modal-header {
+    font-family: sans-serif;
+}
+
+.modal-header h1 {
+    font-weight: 600;
+    color: red;
+}
+
+.modal-body {
+    position: relative;
+}
+
+.modal-body span {
+    position: absolute;
+    right: 10px;
+    bottom: 22px;
+    color: rgb(88, 112, 132);
+    cursor: pointer;
+}
+
+.modal-body input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.modal-body ::placeholder {
+    font-family: sans-serif;
+    color: rgb(88, 112, 132);
+}
+
+.modal-footer button {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.add {
+    width: 100%;
+    background: linear-gradient(200deg, rgba(0, 0, 0, 1), rgba(1, 1, 1, 0)) !important;
+}
+
+.home-page .container img{
+    background-size: contain;
+}
+
+.home-page .register {
+    width: 180px;
+    height: 55px;
+    background: teal;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.home-page .register:hover {
+    opacity: .8;
+}
+
+.movie-link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: red;
+}
+
+section {
+    padding: 50px 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));
+}
+
+section button {
+    background: #2f416d;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-bottom: 1px solid #010710;
+    box-shadow: none !important;
+}
+
+section .accordion-body {
+    background: #132144;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 993px) {
+    section button {
+        font-size: 1.1rem;
+        font-weight: 500;
+    } 
+    section .accordion-body {
+        font-size: 1rem;
+        font-weight: 400;
+    }     
+}
+
+@media screen and (max-width: 812px) {
+    .home-page {
+        padding: 80px 50px 30px;
+    }
+    .home-page h1 {
+        font-size: 2em;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .home-page {
+        padding: 60px 30px 30px;
+    }
+    .home-page input {
+        width: 300px;
+        height: 40px;
+    }
+    .home-page .register {
+        width: 100px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .home-page p {
+        font-size: 1em;
+    }
+    .home-page {
+        padding: 80px 15px 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home-page h1 {
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+    .home-page p {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    .home-page input {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    section {
+        padding: 30px 0 50px;
+    }
+    section button {
+        font-size: 1rem;
+        font-weight: 400;
+    } 
+    section .accordion-body {
+        font-size: .8rem;
+        font-weight: 300;
+    } 
+    .modal-header p {
+        font-weight: 400;
+        font-size: 18px;
+    } 
+    .movie-link {
+        font-size: .3rem;
+        font-weight: 500;
+        background: red;
+    } 
+}
+

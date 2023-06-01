@@ -16,7 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MovieDetailsComponent,
     ResultsComponent,
     NotfoundComponent,
+    PageComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatCardModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

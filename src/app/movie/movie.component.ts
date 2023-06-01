@@ -17,7 +17,7 @@ export class MovieComponent implements OnInit, OnDestroy {
   popular?:any;
   latest?:any;
   result_movies?:any;
-  loader: boolean = false;
+  loader: boolean = true;
   private subs= new SubSink();
 
   constructor(
@@ -28,7 +28,6 @@ export class MovieComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getMovies();
-    this.loader = true;
   }
 
   ngOnDestroy(): void {
@@ -36,6 +35,8 @@ export class MovieComponent implements OnInit, OnDestroy {
   }
 
   putMovies() {
+    this.loader = false;
+
     this.result_movies = [
       {
         "movies": this.nowPlaying,
