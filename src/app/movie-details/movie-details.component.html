@@ -1,37 +1,46 @@
-<app-navbar class="navbar"></app-navbar>
-
-
-<div  *ngIf="!loader; else loadpage">
-    <div class="details">
-        <ng-container *ngFor="let movie of result_movies; let i = index">
-            <ng-container *ngFor="let result of movie.movies">
-                <ng-container *ngIf="i == movieindex && result.id == movieid">
-                    <img src="http://image.tmdb.org/t/p/w500/{{result.poster_path}}" alt="" class="img-fluid">
-                    <div class="text-details">
-                        <h1>{{result.title}}</h1>
-                        <p>{{result.overview}}</p>
-                        <button><a href="http://imdb.com/title/http://image.tmdb.org/t/p/w500/{{result.poster_path}}">WATCH</a></button>
-                    </div>
-                </ng-container>
-            </ng-container>
+<section>
+  <app-navbar class="navbar"></app-navbar>
+  <!-- <div *ngIf="!loader; else loadpage"> -->
+  <div class="details">
+    <ng-container *ngFor="let movie of result_movies; let i = index">
+      <ng-container *ngFor="let result of movie.movies">
+        <ng-container *ngIf="i == movieindex && result.id == movieid">
+          <img
+            src="http://image.tmdb.org/t/p/w500/{{ result.poster_path }}"
+            alt=""
+            class="img-fluid"
+          />
+          <div class="text-details">
+            <h1>{{ result.title }}</h1>
+            <p>{{ result.overview }}</p>
+            <button>
+              <a
+                href="http://imdb.com/title/http://image.tmdb.org/t/p/w500/{{
+                  result.poster_path
+                }}"
+                >WATCH</a
+              >
+            </button>
+          </div>
         </ng-container>
-    </div>
-</div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <!-- </div> -->
 
-<ng-template #loadpage>
+  <!-- <ng-template #loadpage>
     <div class="loader-page">
-        <div class="skeleton">
-            <div class="skeleton-right">
-                <div class="square"></div>
-            </div>
-              <div class="skeleton-left">
-                <div class="line h17 w40 m10"></div>
-                <div class="line"></div>
-                <div class="line h8 w50"></div>
-                <div class="line  w75"></div>
-            </div>
+      <div class="skeleton">
+        <div class="skeleton-right">
+          <div class="square"></div>
         </div>
+        <div class="skeleton-left">
+          <div class="line h17 w40 m10"></div>
+          <div class="line"></div>
+          <div class="line h8 w50"></div>
+          <div class="line w75"></div>
+        </div>
+      </div>
     </div>
-</ng-template>
-
-
+  </ng-template> -->
+</section>
