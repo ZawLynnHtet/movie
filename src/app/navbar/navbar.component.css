@@ -161,6 +161,12 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .nav-container .search-area {
+    padding: 0 20px;
+  }
+}
+
 @media screen and (max-width: 435px) {
   .form .input-box {
     height: 40px;
@@ -179,5 +185,8 @@
   .logo h1 {
     font-size: 2rem;
     font-weight: 600;
+  }
+  .nav-container .search-area {
+    padding: 0 10px;
   }
 }
