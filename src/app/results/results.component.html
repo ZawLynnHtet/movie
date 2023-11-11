@@ -1,2 +1,47 @@
-<app-navbar class="navbar"></app-navbar>
+<section>
+  <div *ngIf="!loader; else loadpage">
+    <div class="details" *ngFor="let result of resultData">
+      <img
+        *ngIf="result.poster_path === null; else notNull"
+        src="../../assets/images/placeholder.png"
+        alt="poster"
+        class="img"
+      />
+      <ng-template #notNull>
+        <img
+          src="http://image.tmdb.org/t/p/w500/{{ result.poster_path }}"
+          alt="poster"
+          class="img"
+        />
+      </ng-template>
+      <div class="text-details">
+        <h1>{{ result.title }}</h1>
+        <p>{{ result.overview }}</p>
+        <button>
+          <a
+            href="http://imdb.com/title/http://image.tmdb.org/t/p/w500/{{
+              result.poster_path
+            }}"
+            >WATCH</a
+          >
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <ng-template #loadpage>
+    <div class="loader-page">
+      <div class="skeleton">
+        <div class="skeleton-right">
+          <div class="square"></div>
+        </div>
+        <div class="skeleton-left">
+          <div class="line h17 w40 m10"></div>
+          <div class="line"></div>
+          <div class="line h8 w50"></div>
+          <div class="line w75"></div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</section>

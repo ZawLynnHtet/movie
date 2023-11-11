@@ -32,7 +32,7 @@ const routes: Routes = [
   {
     path: 'page',
     component: PageComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'movie',
@@ -40,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: 'details',
-    component: MovieDetailsComponent
+    component: MovieDetailsComponent,
   },
   // {
   //   path: 'movie/:id',
@@ -48,20 +48,20 @@ const routes: Routes = [
   // },
   {
     path: 'movie/:movieIndex/:id',
-    component: MovieDetailsComponent
+    component: MovieDetailsComponent,
   },
   {
-    path: 'result',
-    component: ResultsComponent
+    path: 'result/:query',
+    component: ResultsComponent,
   },
   {
     path: '**',
-    component: NotfoundComponent
-  }
+    component: NotfoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -7,24 +7,24 @@ import { SubSink } from 'subsink';
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  styleUrls: ['./movie.component.css'],
 })
 export class MovieComponent implements OnInit, OnDestroy {
-  
-  nowPlaying?:any;
-  upComing?:any;
-  topRated?:any;
-  popular?:any;
-  latest?:any;
-  result_movies?:any;
+  nowPlaying?: any;
+  upComing?: any;
+  topRated?: any;
+  popular?: any;
+  latest?: any;
+  result_movies?: any;
   loader: boolean = true;
-  private subs= new SubSink();
+  private subs = new SubSink();
 
   constructor(
-    private router:Router,
-    private activatedRoute:ActivatedRoute,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
     private mydata: DataService,
-    private result: DataService) {}
+    private result: DataService
+  ) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -39,21 +39,21 @@ export class MovieComponent implements OnInit, OnDestroy {
 
     this.result_movies = [
       {
-        "movies": this.nowPlaying,
-        "title": "Now Playing Movies"
+        movies: this.nowPlaying,
+        title: 'Now Playing Movies',
       },
       {
-        "movies": this.topRated,
-        "title": "Top Rated Movies"
+        movies: this.topRated,
+        title: 'Top Rated Movies',
       },
       {
-        "movies": this.upComing,
-        "title": "Upcoming Movies"
+        movies: this.upComing,
+        title: 'Upcoming Movies',
       },
       {
-        "movies": this.popular,
-        "title": "Popular Movies"
-      }
+        movies: this.popular,
+        title: 'Popular Movies',
+      },
     ];
   }
 
@@ -62,36 +62,37 @@ export class MovieComponent implements OnInit, OnDestroy {
       next: (response: any) => {
         this.nowPlaying = response.results;
         this.putMovies();
-        console.log("unsubscribe")
-      },error: (error: any) => {}
-    })
-  
+        console.log('unsubscribe');
+      },
+      error: (error: any) => {},
+    });
 
     this.subs.sink = this.result.topRatedMovies().subscribe({
       next: (response: any) => {
         this.topRated = response.results;
         this.putMovies();
-      },error: (error: any) => {}
-    })
-  
+      },
+      error: (error: any) => {},
+    });
 
     this.subs.sink = this.result.upComingMovies().subscribe({
       next: (response: any) => {
         this.upComing = response.results;
         this.putMovies();
-      },error: (error: any) => {}
+      },
+      error: (error: any) => {},
     });
-  
 
     this.subs.sink = this.result.popularMovies().subscribe({
       next: (response: any) => {
         this.popular = response.results;
         this.putMovies();
-      },error: (error: any) => {}
+      },
+      error: (error: any) => {},
     });
   }
-    
-  watchMovies(movieid:number, movieindex:number) {
-    this.router.navigateByUrl("movie/" + movieindex + "/" + movieid);
+
+  watchMovies(movieid: number, movieindex: number) {
+    this.router.navigateByUrl('movie/' + movieindex + '/' + movieid);
   }
 }

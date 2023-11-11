@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { FormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ResultsComponent } from './results/results.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -41,6 +41,13 @@ import { PageComponent } from './page/page.component';
     NgxSkeletonLoaderModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    window.onscroll = () => {
+      let header = document.querySelector('.nav-container');
+      header?.classList.toggle('sticky', window.scrollY > 10);
+    };
+  }
+}

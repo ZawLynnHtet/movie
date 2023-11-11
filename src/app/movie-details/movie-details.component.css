@@ -14,7 +14,6 @@ section {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
   gap: 50px;
   padding: 60px 60px 82px;
   color: #fff;
